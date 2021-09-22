@@ -14,8 +14,8 @@
 ## 使用
 
 ```bash
-go run main.go		# 运行
-go test ./...			# 测试
+go run main.go	# 运行
+go test ./...	# 测试
 ```
 
 ## 模板接口
@@ -49,36 +49,36 @@ curl -X POST -F 'user_name=admin' -F "password=123456" http://127.0.0.1:8080/use
 ```bash
 # 详细注释查看文件头
 .
-├── api					# API接口
+├── api	# API接口
 │   ├── main.go
 │   ├── service.go
 │   └── user.go
-├── config			# 配置文件
-├── database		# 数据库
-│   ├── database.db		# 数据库文件
+├── config	# 配置文件
+├── database	# 数据库
+│   ├── database.db	# 数据库文件
 │   └── sqlite.go
 ├── middleware	# 中间件
 │   ├── auth.go
 │   ├── cros.go
 │   └── jwt.go
-├── model				# 数据库模型
+├── model	# 数据库模型
 │   ├── jwt.go
 │   ├── service.go
 │   └── user.go
-├── router			# 路由
+├── router	# 路由
 │   └── router.go
-├── service			# API服务
+├── service	# API服务
 │   ├── app.go
 │   ├── user.go
 │   └── websocket.go
-├── test				# 测试
+├── test	# 测试
 │   └── utils.go
-├── utils				# 小工具
+├── utils	# 小工具
 │   ├── response.go
 │   └── utils.go
 ├── go.mod
 ├── go.sum
-├── main.go		# 主函数
+├── main.go	# 主函数
 └── main_test.go	# 测试
 ```
 
