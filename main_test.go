@@ -1,14 +1,22 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-09-22 16:48:03
+ * @LastEditTime: 2021-09-22 19:59:11
+ * @Description: description
+ */
 package main
 
 import (
-	"fmt"
-	"hyper-manage/test"
+	"gin-socket/test"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-func TestPingRoute(t *testing.T) {
+/**
+ * @description: 测试
+ */
+func TestRoute(t *testing.T) {
 	assert := assert.New(t)
 	router := Setup()
 
@@ -17,11 +25,10 @@ func TestPingRoute(t *testing.T) {
 	assert.Equal("pong", w.Body.String())
 
 	formData := map[string]string{
-		"user_name": "fzf",
-		"password":  "12345678",
+		"user_name": "admin",
+		"password":  "123456",
 	}
 
 	w = test.PostForm("/user/login", formData, router)
 	assert.Equal(200, w.Code)
-	fmt.Println(w.Body)
 }

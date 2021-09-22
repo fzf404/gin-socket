@@ -1,14 +1,23 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-09-22 16:51:54
+ * @LastEditTime: 2021-09-22 16:51:54
+ * @Description: 权限验证
+ */
 package middleware
 
 import (
-	"hyper-manage/database"
-	"hyper-manage/model"
-	"hyper-manage/utils"
+	"gin-socket/database"
+	"gin-socket/model"
+	"gin-socket/utils"
 	"strings"
 
 	"github.com/gin-gonic/gin"
 )
 
+/**
+ * @description: Bearer验证
+ */
 func Auth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// 获取 Token
@@ -16,7 +25,7 @@ func Auth() gin.HandlerFunc {
 
 		// 判断Bearer
 		if tokenString == "" || !strings.HasPrefix(tokenString, "Bearer") {
-			utils.Warning(c, "权限不足")
+			utils.Warning(c, utils.CodeNoAuth, "权限不足")
 			c.Abort()
 			return
 		}
@@ -26,7 +35,7 @@ func Auth() gin.HandlerFunc {
 		token, claims, err := ParseToken(tokenString)
 
 		if err != nil || !token.Valid {
-			utils.Warning(c, "权限不足")
+			utils.Warning(c, utils.CodeNoAuth, "权限不足")
 			c.Abort()
 			return
 		}
@@ -39,7 +48,7 @@ func Auth() gin.HandlerFunc {
 
 		// 验证用户是否存在
 		if user.ID == 0 {
-			utils.Warning(c, "权限不足")
+			utils.Warning(c, utils.CodeNoAuth, "权限不足")
 			c.Abort()
 			return
 		}

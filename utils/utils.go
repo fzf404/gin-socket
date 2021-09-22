@@ -1,7 +1,18 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-09-21 22:46:40
+ * @LastEditTime: 2021-09-22 15:42:48
+ * @Description: 通用工具
+ */
 package utils
 
-import "reflect"
+import (
+	"reflect"
+)
 
+/**
+ * @description: 结构体反射赋值
+ */
 func StructAssign(binding interface{}, value interface{}) {
 	bVal := reflect.ValueOf(binding).Elem() //获取reflect.Type类型
 	vVal := reflect.ValueOf(value).Elem()   //获取reflect.Type类型
@@ -14,3 +25,4 @@ func StructAssign(binding interface{}, value interface{}) {
 		}
 	}
 }
+

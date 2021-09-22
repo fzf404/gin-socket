@@ -1,15 +1,24 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-09-22 19:52:23
+ * @LastEditTime: 2021-09-22 19:54:20
+ * @Description: jwt认证
+ */
 package middleware
 
 import (
-	"hyper-manage/model"
+	"gin-socket/model"
 	"time"
 
 	"github.com/golang-jwt/jwt"
 )
 
-var jwtKey = []byte("hyper-manage-secret")
+var jwtKey = []byte("gin-socket-secret")
 
-// ReleaseToken 生成Token
+/**
+ * @description: 生成Token
+ * @param {model.User} user
+ */
 func ReleaseToken(user model.User) (string, error) {
 
 	// 超时时间
@@ -37,7 +46,10 @@ func ReleaseToken(user model.User) (string, error) {
 	return tokenString, nil
 }
 
-// ParseToken 解码Token
+/**
+ * @description: 验证Token
+ * @param {string} tokenString
+ */
 func ParseToken(tokenString string) (*jwt.Token, *model.Claims, error) {
 	claims := &model.Claims{}
 	// 解码

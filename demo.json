@@ -1,0 +1,7 @@
+{
+  "code": 200,
+  "data": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6MTYzMjkxNzQyMywiaWF0IjoxNjMyMzEyNjIzLCJpc3MiOiJmemY0MDQiLCJzdWIiOiJ0b2tlbiJ9.TA3OVIuCzi5u6PT2Ds1gEwAYY6ZUCd4EfM4JWROCrPw"
+  },
+  "msg": "登录成功"
+}
