@@ -18,7 +18,7 @@ go run main.go	# 运行
 go test ./...	# 测试
 ```
 
-## 模板接口
+## 实现接口
 
 ```bash
 # /Ping
